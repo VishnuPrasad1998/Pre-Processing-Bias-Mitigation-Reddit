@@ -21,7 +21,7 @@ All datasets used in these notebooks are available for download via link:
 | `/CDA/Data preperation/gender_creation_and_processing.ipynb` | Creates and processes a dataset centered around gender attributes. |
 | `/CDA/Data preperation/orientation_data_set_creation_and_processing.ipynb` | Handles the creation and preprocessing of a dataset focusing on sexual orientation. |
 | `/CDA/Data preperation/race_data_set_creation_and_processing.ipynb` | Generates and processes a dataset based on racial attributes. |
-| `/Prompt Tuning/ptuning_dataset_creation.ipynb` | This notebook focuses on synthetically creating datasets tailored for prompt tuning (p-tuning) tasks. It prepares data in a format suitable for fine-tuning language models using soft prompts, which can be especially useful in low-resource or task-specific NLP scenarios.|
+| `/Prompt Tuning/ptuning_dataset_creation.ipynb` | This notebook focuses on synthetically creating datasets tailored for prompt tuning tasks. It prepares data in a format suitable for fine-tuning language models using soft prompts, which can be especially useful in low-resource or task-specific NLP scenarios.|
 
 ### 🧹 2. Debiasing (CDA - Counterfactual Data Augmentation)
 
@@ -35,4 +35,4 @@ All datasets used in these notebooks are available for download via link:
 
 | Notebook | Description |
 |----------|-------------|
-| `/Prompt Tuning/PromptTuningNew.ipynb` | Demonstrates **prompt tuning** to reduce bias in text outputs from language models. Great for NLP applications involving identity-sensitive prompts. |
+| `/Prompt Tuning/PromptTuningNew.ipynb` | Implemented soft **prompt tuning** using PEFT for mitigating bias.|
