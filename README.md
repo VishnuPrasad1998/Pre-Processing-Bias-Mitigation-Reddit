@@ -1,46 +1,41 @@
-# **Pre-Processing and Bias Mitigation for Reddit Comments**
+# generate_readme.py
 
-This project automates **data preprocessing** and **bias detection** in Reddit comments, with a particular focus on **gender-related bias**. The solution extracts relevant phrases, identifies stereotypical and non-stereotypical attributes, and uses **NLP models** to annotate comments and phrases for bias and sarcasm. The annotated dataset is useful for bias analysis and bias mitigation tasks.
+readme_content = """
+# 🧠 Gender, Orientation, and Race Data Processing & Debiasing
 
----
-
-## **Folder Structure**
-
-Pre-Processing-Bias-Mitigation-Reddit/
-Data:
-- reddit_comments_gender_female_processed_phrase.csv
-- reddit_comments_gender_female_processed_phrase_annotated.csv
-- reddit_comments_gender_male_processed.csv
-
-DataSetPreparation:
-- data_set_creation_and_processing.ipynb
-
-README.md
+This project focuses on bias mitigation using two distinct methods: Counterfactual Data Augmentation (CDA) and prompt tuning. CDA was applied to a Reddit dataset to reduce representational bias through augmented counterfactual examples. In parallel, prompt tuning was performed on synthetically generated data to steer model outputs toward fairer representations. Together, these approaches demonstrate complementary strategies for addressing bias in language models.
 
 ---
 
-## **Key Features**
+## 📂 Dataset Access
 
-1. **Data Preprocessing**:
-   - Cleans and processes Reddit comments to prepare them for bias analysis.
-   - Filters comments based on content length and removes unnecessary characters.
+All datasets used in these notebooks are available for download via link:
 
-2. **Phrase Extraction**:
-   - Extracts phrases containing **target group terms** (e.g., "woman", "she", "mother") and **attributes**:
-     - **Stereotypical** (e.g., "nurse", "housekeeper").
-     - **Non-stereotypical** (e.g., "engineer", "physician").
-
-3. **Bias and Sarcasm Detection**:
-   - Uses **HuggingFace Transformers** for intelligent annotation:
-     - **Sarcasm Detection**: `distilbert-base-uncased-finetuned-sst-2-english`
-     - **Bias Detection**: `unitary/toxic-bert`
-   - Adds two new columns to the dataset:
-     - `bias_sent`: Binary flag (`1` for biased, `0` for unbiased) for the full sentence.
-     - `bias_phrase`: Binary flag for the extracted phrase.
-
-4. **Output**:
-   - Annotated CSV file with comments and extracted phrases labeled for bias and sarcasm.
+🔗 [Download Dataset](https://drive.google.com/drive/folders/1WSAkZ18dRzTQ8cIUwnwlFfTN9rlAazRj?usp=drive_link)
 
 ---
 
+## 📚 Notebooks Included
 
+### 🧩 1. Data Creation & Processing
+
+| Notebook | Description |
+|----------|-------------|
+| `/CDA/Data preperation/gender_creation_and_processing.ipynb` | Creates and processes a dataset centered around gender attributes. |
+| `/CDA/Data preperation/orientation_data_set_creation_and_processing.ipynb` | Handles the creation and preprocessing of a dataset focusing on sexual orientation. |
+| `/CDA/Data preperation/race_data_set_creation_and_processing.ipynb` | Generates and processes a dataset based on racial attributes. |
+| `/Prompt Tuning/ptuning_dataset_creation.ipynb` | This notebook focuses on synthetically creating datasets tailored for prompt tuning (p-tuning) tasks. It prepares data in a format suitable for fine-tuning language models using soft prompts, which can be especially useful in low-resource or task-specific NLP scenarios.|
+
+### 🧹 2. Debiasing (CDA - Counterfactual Data Augmentation)
+
+| Notebook | Description |
+|----------|-------------|
+| `/CDA/Debias/Debias_gender.ipynb` | Focuses on detecting and reducing bias related to **gender** in datasets using CDA.|
+| `/CDA/Debias/Debias_orientation.ipynb` | Focuses on detecting and reducing bias related to **sexual orientation** in datasets using CDA.|
+| `/CDA/Debias/Debias_race.ipynb` | Focuses on detecting and reducing bias related to **race** in datasets using CDA.|
+
+### 🤖 3. Debiasing (Prompt Tuning)
+
+| Notebook | Description |
+|----------|-------------|
+| `/Prompt Tuning/PromptTuningNew.ipynb` | Demonstrates **prompt tuning** to reduce bias in text outputs from language models. Great for NLP applications involving identity-sensitive prompts. |
