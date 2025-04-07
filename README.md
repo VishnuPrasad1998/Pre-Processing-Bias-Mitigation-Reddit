@@ -1,6 +1,3 @@
-# generate_readme.py
-
-readme_content = """
 # 🧠 Gender, Orientation, and Race Data Processing & Debiasing
 
 This project focuses on bias mitigation using two distinct methods: Counterfactual Data Augmentation (CDA) and prompt tuning. CDA was applied to a Reddit dataset to reduce representational bias through augmented counterfactual examples. In parallel, prompt tuning was performed on synthetically generated data to steer model outputs toward fairer representations. Together, these approaches demonstrate complementary strategies for addressing bias in language models.
